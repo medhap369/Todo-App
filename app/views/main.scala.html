@@ -1,0 +1,18 @@
+@(title: String)(content: Html)(script: Html)(css: Html)
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>@title</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+        @css
+    </head>
+    <body>
+        @content
+
+        @script
+    </body>
+
+</html>
