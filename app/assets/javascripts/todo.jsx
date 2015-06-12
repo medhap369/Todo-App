@@ -50,9 +50,9 @@ requirejs(["main"], function () {
                 if (this.props.value.status == 1) {
                     this.state.name = "Red";
                     this.state.disable = "disabled";
-                }
 
-                this.forceUpdate();
+                    this.setState();
+                }
 
             },
             handleDelete: function () {
@@ -92,7 +92,7 @@ requirejs(["main"], function () {
 
 
                 this.state.list.push(obj);
-                this.forceUpdate();
+                this.setState();
             },
 
             update: function (item) {
@@ -102,8 +102,6 @@ requirejs(["main"], function () {
 
                 var i = this.state.list.indexOf(item);
                 this.state.list[i].status = 1;
-
-
             },
 
             remove: function (item) {
@@ -116,7 +114,7 @@ requirejs(["main"], function () {
                     this.state.list.splice(i, 1);
                 }
 
-                this.forceUpdate();
+                this.setState();
             },
             componentWillMount: function () {
                 this.loadTasks();
